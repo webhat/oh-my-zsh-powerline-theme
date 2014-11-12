@@ -69,7 +69,7 @@ fi
 if [ "$_POWERLINE_TMUX" = "" ]; then
   ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 "
 else
-  ZSH_THEME_GIT_PROMPT_PREFIX=" "
+  ZSH_THEME_GIT_PROMPT_PREFIX=" \xEE\x82\xa0 "
 fi
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY=" $POWERLINE_GIT_DIRTY"
@@ -101,7 +101,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
         if [ "$_POWERLINE_TMUX" = "" ]; then
             POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
         else
-            POWERLINE_GIT_INFO_RIGHT="%F{white}""%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
+            POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\xEE\x82\xb2'"%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
         fi
     fi
 # fi
@@ -124,7 +124,7 @@ fi
 if [ "$_POWERLINE_TMUX" = "" ]; then
     PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}"$'\ue0b0'"%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k"$'\ue0b0'"%f "
 else
-    PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}""%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k""%f "
+    PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}"$'\xEE\x82\xb0'"%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k""%f "
 fi
 
 if [ "$POWERLINE_NO_BLANK_LINE" = "" ]; then
@@ -139,7 +139,7 @@ if [ "$POWERLINE_DISABLE_RPROMPT" = "" ]; then
         if [ "$_POWERLINE_TMUX" = "" ]; then
             RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
         else
-            RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}""%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
+            RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\xEE\x82\xb2'"%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
         fi
     else
         RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%F{240}"$'\ue0b2'"%f%k%K{240}%F{255} $POWERLINE_RIGHT_A %f%k"
