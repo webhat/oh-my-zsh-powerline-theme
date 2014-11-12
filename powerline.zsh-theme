@@ -66,7 +66,7 @@ if [ "$POWERLINE_GIT_UNMERGED" = "" ]; then
   POWERLINE_GIT_UNMERGED="═"
 fi
 
-if [ "$TMUX" = "" ]; then
+if [ "$_POWERLINE_TMUX" = "" ]; then
   ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 "
 else
   ZSH_THEME_GIT_PROMPT_PREFIX=" "
@@ -98,7 +98,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
         POWERLINE_GIT_INFO_RIGHT=""
     else
         POWERLINE_GIT_INFO_LEFT=""
-        if [ "$TMUX" = "" ]; then
+        if [ "$_POWERLINE_TMUX" = "" ]; then
             POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
         else
             POWERLINE_GIT_INFO_RIGHT="%F{white}""%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
@@ -121,7 +121,7 @@ if [ "$POWERLINE_DETECT_SSH" != "" ]; then
     POWERLINE_SEC1_TXT=%F{white}
   fi
 fi
-if [ "$TMUX" = "" ]; then
+if [ "$_POWERLINE_TMUX" = "" ]; then
     PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}"$'\ue0b0'"%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k"$'\ue0b0'"%f "
 else
     PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}""%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k""%f "
@@ -136,7 +136,7 @@ if [ "$POWERLINE_DISABLE_RPROMPT" = "" ]; then
     if [ "$POWERLINE_RIGHT_A" = "" ]; then
         RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%k"
     elif [ "$POWERLINE_RIGHT_B" = "" ]; then
-        if [ "$TMUX" = "" ]; then
+        if [ "$_POWERLINE_TMUX" = "" ]; then
             RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
         else
             RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}""%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
